@@ -119,6 +119,10 @@ const DATA_CONTENT = [
     id: 10,
     text: "Mỗi khi bạn phán xét ai đó là bạn tiết lộ một phần của bản thân cần được chữa lành.",
   },
+  {
+    id: 11,
+    text: "Tuỳ duyên không phải là phó mặc. Tuỳ duyên là vẫn làm điều mình cho là phù hợp nhất nhưng trong lòng chấp nhận rằng: đủ duyên thì ra kết quả, còn không đủ duyên thì thôi.",
+  },
 ];
 const DATA_BUTTON = [
   {
