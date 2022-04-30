@@ -7,16 +7,23 @@
   align-items: center;
   height: 100vh;
   width: 100vw;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  position: relative;
 }
 .content {
   padding: 0 100px;
+}
+@media (max-width: 768px) {
+  .content {
+    padding: 0 30px;
+  }
 }
 
 .btnContainer {
   text-align: center;
 }
+
 .text {
   background: #fbeee0;
   border-radius: 12px;
@@ -71,4 +78,41 @@
     font-size: 1.5rem;
     padding: 0.75rem 2rem;
   }
+}
+.changBG {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 24px;
+}
+
+.buttonRandomAnimation {
+  width: 60px;
+  height: 30px;
+  border-radius: 4px;
+  background-color: #4158d0;
+  background-image: linear-gradient(
+    43deg,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );
+}
+
+.buttonChangeBG {
+  width: 60px;
+  height: 30px;
+  border-radius: 4px;
+  background-color: #0093e9;
+  background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+}
+
+.buttonIDontKnow {
+  width: 60px;
+  height: 30px;
+  border-radius: 4px;
+  background-color: #fbab7e;
+  background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
 }
