@@ -1,17 +1,14 @@
-import axios from "axios";
 import type { NextPage } from "next";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import { isMobile } from "react-device-detect";
 import styles from "../styles/Home.module.css";
-import useFetch from "./hooks/useFetch";
 import { DATA_BUTTON, DATA_CONTENT } from "./store/data";
 
 const Home: NextPage = () => {
   const [text, setText] = useState(DATA_CONTENT[0].text);
   const [textButton, setTextButton] = useState(DATA_BUTTON[0].text);
   const [bg, setBg] = useState("");
-  const [requesting, setRequesting] = useState(false);
 
   const randomText = () => {
     const numberRandom = Math.floor(Math.random() * 10) + 1;
@@ -32,11 +29,7 @@ const Home: NextPage = () => {
   };
 
   const getUniverse = () => {
-    setRequesting(true);
     randomText();
-    setTimeout(() => {
-      setRequesting(false);
-    }, 1000);
   };
 
   useEffect(() => {

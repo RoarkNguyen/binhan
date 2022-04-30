@@ -9,8 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "axios": "^0.27.2",
-    "cancelable-promise": "^4.3.0",
     "next": "12.1.5",
     "react": "18.1.0",
     "react-device-detect": "^2.2.2",
