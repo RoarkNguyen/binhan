@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import type { NextPage } from "next";
 import Head from "next/head";
 import { useEffect, useState } from "react";
@@ -7,7 +8,11 @@ import styles from "../styles/Home.module.css";
 const Home: NextPage = () => {
   const [text, setText] = useState(DATA_CONTENT[0].text);
   const [textButton, setTextButton] = useState(DATA_BUTTON[0].text);
+
   const [bg, setBg] = useState("");
+  const [imageGif, setImageGif] = useState(DATA_ANIMATIONS[0].url);
+  const [isAnimation, setAnimation] = useState(false);
+  const [isHokBitNua, setHokBitNua] = useState(false);
 
   const randomText = () => {
     const numberRandom = Math.floor(Math.random() * DATA_CONTENT.length) + 1;
@@ -24,6 +29,24 @@ const Home: NextPage = () => {
     } else {
       setBg(`https://www.picsum.photos/1600/90${numberFrom1To8}`);
     }
+  };
+
+  const handleAnimation = () => {
+    setAnimation(true);
+    const numberRandom = Math.floor(Math.random() * DATA_ANIMATIONS.length) + 1;
+    setImageGif(DATA_ANIMATIONS[numberRandom]?.url);
+
+    setTimeout(() => {
+      setAnimation(false);
+    }, 2500);
+  };
+
+  const handleHokBitNua = () => {
+    setHokBitNua(true);
+
+    setTimeout(() => {
+      setHokBitNua(false);
+    }, 2500);
   };
 
   useEffect(() => {
@@ -48,21 +71,43 @@ const Home: NextPage = () => {
           background: `url(${bg})`,
         }}
       >
-        <div className={styles.content}>
-          <div className={styles.text}>{text}</div>
-          <div className={styles.btnContainer}>
-            <div className={styles.buttonText} onClick={() => randomText()}>
-              {textButton}
+        {/* Content */}
+        {!isAnimation && !isHokBitNua && (
+          <div className={styles.content}>
+            <div className={styles.text}>{text}</div>
+            <div className={styles.btnContainer}>
+              <div className={styles.buttonText} onClick={() => randomText()}>
+                {textButton}
+              </div>
             </div>
           </div>
-        </div>
+        )}
+
+        {/* Animations */}
+        {isAnimation && (
+          <div className={styles.animations}>
+            <img src={imageGif} alt="" className={styles.gif} />
+          </div>
+        )}
+
+        {/* hok bit nua */}
+
+        {isHokBitNua && (
+          <div className={styles.hokBitNua}>
+            <div>Chúc trí tuệ và tình yêu luôn ở bên bạn!</div>
+          </div>
+        )}
+
         <div className={styles.changBG}>
           <div
             className={styles.buttonRandomAnimation}
-            onClick={() => changeBg()}
+            onClick={() => handleAnimation()}
           />
           <div className={styles.buttonChangeBG} onClick={() => changeBg()} />
-          <div className={styles.buttonIDontKnow} onClick={() => changeBg()} />
+          <div
+            className={styles.buttonIDontKnow}
+            onClick={() => handleHokBitNua()}
+          />
         </div>
       </div>
     </div>
@@ -122,6 +167,10 @@ const DATA_CONTENT = [
     id: 11,
     text: "Tuỳ duyên không phải là phó mặc. Tuỳ duyên là vẫn làm điều mình cho là phù hợp nhất nhưng trong lòng chấp nhận rằng: đủ duyên thì ra kết quả, còn không đủ duyên thì thôi.",
   },
+  {
+    id: 12,
+    text: "Khi bạn nhìn vào một thân cây hay một con người, từ sự tĩnh lặng ở trong bạn, thì ai đang nhìn vậy? Có một cái gì đó, sâu hơn là con người của bạn, đang nhìn. Đó là Tâm đang nhìn vào cái vật mà chính Tâm đã sáng tạo ra.",
+  },
 ];
 const DATA_BUTTON = [
   {
@@ -132,20 +181,32 @@ const DATA_BUTTON = [
     id: 1,
     text: "Xin quẻ nè",
   },
-  // {
-  //     id: 1,
-  //     text: 'Nhận năng lượng vũ trụ'
-  // },
-  // {
-  //     id: 2,
-  //     text: 'Hấp thu thất tinh đại pháp'
-  // },
-  // {
-  //     id: 3,
-  //     text: 'Xin xăm đê'
-  // },
   {
     id: 2,
     text: "Gét Gô",
+  },
+];
+
+const DATA_ANIMATIONS = [
+  {
+    id: 0,
+    url: "https://media.giphy.com/media/xTiTnet7xRv1GPTShi/giphy.gif",
+  },
+  {
+    id: 1,
+    url: "https://media.giphy.com/media/7kn27lnYSAE9O/giphy.gif",
+  },
+
+  {
+    id: 2,
+    url: "https://media.giphy.com/media/S3sc3Pg9dFpUA/giphy.gif",
+  },
+  {
+    id: 3,
+    url: "https://media.giphy.com/media/3o7ZeAiCICH5bj1Esg/giphy.gif",
+  },
+  {
+    id: 4,
+    url: "https://media.giphy.com/media/xTiTnet7xRv1GPTShi/giphy.gif",
   },
 ];
