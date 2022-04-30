@@ -10,9 +10,8 @@ const Home: NextPage = () => {
   const [bg, setBg] = useState("");
 
   const randomText = () => {
-    const numberRandom = Math.floor(Math.random() * 10) + 1;
+    const numberRandom = Math.floor(Math.random() * DATA_CONTENT.length) + 1;
     const numberButtonRandom = Math.floor(Math.random() * 2) + 1;
-
     setText(DATA_CONTENT[numberRandom].text);
     setTextButton(DATA_BUTTON[numberButtonRandom].text);
   };
