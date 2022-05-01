@@ -34,10 +34,6 @@ const Home: NextPage = () => {
 
   const handleStart = () => {
     setTimeout(() => {
-      handlePlayer();
-    }, 2000);
-
-    setTimeout(() => {
       setIsStart(true);
     }, 5000);
   };
@@ -129,7 +125,10 @@ const Home: NextPage = () => {
         {!isStart && (
           <div>
             <button
-              onClick={() => handleStart()}
+              onClick={() => {
+                handlePlayer();
+                handleStart();
+              }}
               className={styles.glowOnHover}
               type="button"
             >
