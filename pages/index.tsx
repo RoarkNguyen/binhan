@@ -16,6 +16,7 @@ const Home: NextPage = () => {
   const [bg, setBg] = useState("");
   const [imageGif, setImageGif] = useState(DATA_ANIMATIONS[0].url);
   const [isAnimation, setAnimation] = useState(false);
+  const [isStart, setIsStart] = useState(false);
   const [isHokBitNua, setHokBitNua] = useState(false);
 
   const [urlMusic, setUrlMusic] = useState(DATA_MUSIC[0].url);
@@ -31,8 +32,17 @@ const Home: NextPage = () => {
 
   const [isPlay, setIsPlay] = useState(false);
 
+  const handleStart = () => {
+    setTimeout(() => {
+      handlePlayer();
+    }, 2000);
+
+    setTimeout(() => {
+      setIsStart(true);
+    }, 5000);
+  };
+
   const setActiveIndex = (activeIndex: number) => {
-    const id = DATA_MUSIC[activeIndex].id;
     setIndexActive(activeIndex);
     setUrlMusic(DATA_MUSIC[activeIndex].url);
   };
@@ -107,12 +117,6 @@ const Home: NextPage = () => {
             controls={false}
             playing={isPlay}
             progressInterval={200}
-            config={{
-              file: {
-                attributes: { preload: "auto" },
-                forceAudio: true,
-              },
-            }}
           />
         </div>
       )}
@@ -122,31 +126,49 @@ const Home: NextPage = () => {
           background: `url(${bg})`,
         }}
       >
-        {/* Content */}
-        {!isAnimation && !isHokBitNua && (
-          <div className={styles.content}>
-            <div className={styles.text}>{text}</div>
-            <div className={styles.btnContainer}>
-              <div className={styles.buttonText} onClick={() => randomText()}>
-                {textButton}
+        {!isStart && (
+          <div>
+            <button
+              onClick={() => handleStart()}
+              className={styles.glowOnHover}
+              type="button"
+            >
+              Kết nối với vũ trụ
+            </button>
+          </div>
+        )}
+        {isStart && (
+          <>
+            {/* Content */}
+            {!isAnimation && !isHokBitNua && (
+              <div className={styles.content}>
+                <div className={styles.text}>{text}</div>
+                <div className={styles.btnContainer}>
+                  <div
+                    className={styles.buttonText}
+                    onClick={() => randomText()}
+                  >
+                    {textButton}
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        )}
+            )}
 
-        {/* Animations */}
-        {isAnimation && (
-          <div className={styles.animations}>
-            <img src={imageGif} alt="" className={styles.gif} />
-          </div>
-        )}
+            {/* Animations */}
+            {isAnimation && (
+              <div className={styles.animations}>
+                <img src={imageGif} alt="" className={styles.gif} />
+              </div>
+            )}
 
-        {/* hok bit nua */}
+            {/* hok bit nua */}
 
-        {isHokBitNua && (
-          <div className={styles.hokBitNua}>
-            <div>Chúc trí tuệ và tình yêu luôn ở bên bạn!</div>
-          </div>
+            {isHokBitNua && (
+              <div className={styles.hokBitNua}>
+                <div>Chúc trí tuệ và tình yêu luôn ở bên bạn!</div>
+              </div>
+            )}
+          </>
         )}
 
         <div className={styles.play}>
