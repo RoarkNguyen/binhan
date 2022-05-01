@@ -32,8 +32,6 @@ const Home: NextPage = () => {
   const [isPlay, setIsPlay] = useState(false);
 
   const setActiveIndex = (activeIndex: number) => {
-    console.log(activeIndex, "_activeIndex");
-
     const id = DATA_MUSIC[activeIndex].id;
     setIndexActive(activeIndex);
     setUrlMusic(DATA_MUSIC[activeIndex].url);
