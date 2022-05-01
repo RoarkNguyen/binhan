@@ -140,3 +140,39 @@
     rgb(255, 217, 19) 0px 0px 0px 9px, rgb(255, 156, 85) 0px 0px 0px 12px,
     rgb(255, 85, 85) 0px 0px 0px 15px;
 }
+
+.play {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 32px;
+  color: white;
+  align-items: center;
+}
+
+.playItem13 {
+  padding: 4px 10px;
+  transition: all ease-in-out;
+}
+
+.playItem13:active {
+  transform: scale(1.2);
+  opacity: 0.6;
+}
+
+.playItem2 {
+  padding: 4px 10px;
+  transition: all ease-in-out;
+}
+
+.playItem2:active {
+  opacity: 0.6;
+}
+
+.disable {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.6;
+}
