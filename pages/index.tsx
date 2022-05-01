@@ -3,11 +3,11 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
 import { isMobile } from "react-device-detect";
-import styles from "../styles/Home.module.css";
-import { FaPlay } from "react-icons/fa";
-import { BsFillPauseCircleFill } from "react-icons/bs";
 import { BiSkipNext, BiSkipPrevious } from "react-icons/bi";
+import { BsFillPauseCircleFill } from "react-icons/bs";
+import { FaPlay } from "react-icons/fa";
 import ReactPlayer from "react-player";
+import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
   const [text, setText] = useState(DATA_CONTENT[0].text);
@@ -117,11 +117,6 @@ const Home: NextPage = () => {
             }}
           />
         </div>
-      )}
-      {playerRef ? (
-        <div onClick={() => setIsPlay(false)}>pause</div>
-      ) : (
-        <div onClick={() => setIsPlay(true)}>play</div>
       )}
       <div
         className={styles.base}
