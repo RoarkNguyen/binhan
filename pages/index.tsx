@@ -67,7 +67,9 @@ const Home: NextPage = () => {
 
   const handleAnimation = () => {
     setAnimation(true);
-    const numberRandom = Math.floor(Math.random() * DATA_ANIMATIONS.length) + 1;
+    const numberRandom =
+      Math.floor(Math.random() * (DATA_ANIMATIONS.length - 1)) + 1;
+
     setImageGif(DATA_ANIMATIONS[numberRandom]?.url);
 
     setTimeout(() => {
@@ -201,49 +203,46 @@ const DATA_MUSIC = [
     id: 0,
     url: "/music/focus.mp3",
   },
+
   {
     id: 1,
-    url: "/music/237c.mp3",
-  },
-  {
-    id: 2,
-    url: "/music/bedtime.mp3",
-  },
-  {
-    id: 3,
-    url: "/music/bedtime.mp3",
-  },
-  {
-    id: 4,
-    url: "/music/believer.mp3",
-  },
-  {
-    id: 5,
-    url: "/music/cua.mp3",
-  },
-  {
-    id: 6,
-    url: "/music/internetlove.mp3",
-  },
-  {
-    id: 7,
     url: "/music/seetinh.mp3",
   },
   {
-    id: 8,
-    url: "/music/simplelove.mp3",
-  },
-  {
-    id: 9,
-    url: "/music/thichquaruina.mp3",
-  },
-  {
-    id: 10,
+    id: 2,
     url: "/music/yoursmile.mp3",
   },
   {
-    id: 11,
+    id: 3,
+    url: "/music/believer.mp3",
+  },
+  {
+    id: 4,
+    url: "/music/cua.mp3",
+  },
+  {
+    id: 4,
+    url: "/music/internetlove.mp3",
+  },
+  {
+    id: 6,
+    url: "/music/237c.mp3",
+  },
+  {
+    id: 7,
+    url: "/music/simplelove.mp3",
+  },
+  {
+    id: 8,
+    url: "/music/thichquaruina.mp3",
+  },
+  {
+    id: 9,
     url: "/music/100years.mp3",
+  },
+  {
+    id: 10,
+    url: "/music/bedtime.mp3",
   },
 ];
 
@@ -1284,15 +1283,19 @@ const DATA_ANIMATIONS = [
   },
   {
     id: 1,
+    url: "https://media.giphy.com/media/xTiTnet7xRv1GPTShi/giphy.gif",
+  },
+  {
+    id: 2,
     url: "https://media.giphy.com/media/7kn27lnYSAE9O/giphy.gif",
   },
 
   {
-    id: 2,
+    id: 3,
     url: "https://media.giphy.com/media/S3sc3Pg9dFpUA/giphy.gif",
   },
   {
-    id: 3,
+    id: 4,
     url: "https://media.giphy.com/media/xTiTnet7xRv1GPTShi/giphy.gif",
   },
 ];
