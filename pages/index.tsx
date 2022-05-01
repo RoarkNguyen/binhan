@@ -280,7 +280,7 @@ const DATA_CONTENT = [
   },
   {
     id: 9,
-    text: "Khôn ngoan chỉ đến qua con đường đau khổ. Có lẽ điều gì bắt trái tim ta tan nát chính là điều giúp trái tim rộng mở. Đau khổ giúp ta rất nhiều, nếu ta chấp nhận bài học mà đau khổ mang đến. Có lẽ chính thử thách lớn nhất trong đời sẽ ban tặng cơ hội lớn nhất.",
+    text: `"Khôn ngoan chỉ đến qua con đường đau khổ. Có lẽ điều gì bắt trái tim ta tan nát chính là điều giúp trái tim rộng mở. Đau khổ giúp ta rất nhiều, nếu ta chấp nhận bài học mà đau khổ mang đến. Có lẽ chính thử thách lớn nhất trong đời sẽ ban tặng cơ hội lớn nhất."`,
   },
   {
     id: 10,
@@ -288,7 +288,7 @@ const DATA_CONTENT = [
   },
   {
     id: 11,
-    text: "Tuỳ duyên không phải là phó mặc. Tuỳ duyên là vẫn làm điều mình cho là phù hợp nhất nhưng trong lòng chấp nhận rằng: đủ duyên thì ra kết quả, còn không đủ duyên thì thôi.",
+    text: `"Tuỳ duyên không phải là phó mặc. Tuỳ duyên là vẫn làm điều mình cho là phù hợp nhất nhưng trong lòng chấp nhận rằng: đủ duyên thì ra kết quả, còn không đủ duyên thì thôi."`,
   },
   {
     id: 12,
@@ -500,7 +500,7 @@ const DATA_CONTENT = [
   },
   {
     id: 53,
-    text: `Một tâm thức chấp trụ và phân biệt đã tạo ra thời gian và không gian hữu hạn, nghĩa là tạo ra sanh tử ta - người, đây - kia, đã qua - sắp tới, còn - mất, có - không...”`,
+    text: `"Một tâm thức chấp trụ và phân biệt đã tạo ra thời gian và không gian hữu hạn, nghĩa là tạo ra sanh tử ta - người, đây - kia, đã qua - sắp tới, còn - mất, có - không...”`,
   },
   {
     id: 54,
