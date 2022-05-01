@@ -98,7 +98,7 @@ const Home: NextPage = () => {
       <Head>
         <title>Love Is Always Here</title>
         <meta name="description" content="Love Is Always Here" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/heartIcon.png" />
       </Head>
       {!isSSR && (
         <div>
